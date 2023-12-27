@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calcu.css">
+    <link rel="icon"href="calcu.png">
+</head>
+<script language="javascript" type="text/javascript">
+
+    function multiply()
+    {a=Number(document.calculator.number1.value);
+    b=Number(document.calculator.number2.value);
+    c=a*b;
+    document.calculator.total.value=c;
+    }
+    function addition(){
+    a=Number(document.calculator.number1.value);
+    b=Number(document.calculator.number2.value);
+    c=a+b;
+    document.calculator.total.value=c;
+    }
+    function subtraction(){
+    a=Number(document.calculator.number1.value);
+    b=Number(document.calculator.number2.value);
+    c=a-b;
+    document.calculator.total.value=c;
+    }
+    function division(){
+    a=Number(document.calculator.number1.value);
+    b=Number(document.calculator.number2.value);
+    c=a/b;
+    document.calculator.total.value=c;
+    }
+    
+    
+</script>
+<body>
+    <h1>Simple Calculator</h1>
+    <section id="calcu">
+    <form name="calculator">
+        <br>
+    
+        <br><br>
+        <input type="text" name="number1" class="input" placeholder="NUMBER e.g. 2003">
+        <input type="text" name="number2" class="input" placeholder="NUMBER e.g. 2023">
+        <br>
+        <br>
+        <input type="button" class="input" id="mdas" value=" + ADD " onclick="javascript:addition();">
+        <input type="button" class="input" id="mdas" value=" - SUB" onclick="javascript:subtraction();">
+        <input type="button" class="input" id="mdas" value=" / DIVIDE" onclick="javascript:division();">
+        <input type="button" class="input" id="mdas" value=" * MULTIPLY" onclick="javascript:multiply();">
+        <br><br>
+        <input type="text" class="input"  name="total" placeholder="RESULT HERE">
+        <input type="reset" id="clear"  value="CLEAR">
+        <br><br>
+        <p style="color: white;">TRY IT</p>
+    </form>  
+    </section>  
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>N.A.S Blog Site</title>
+    <link rel="icon"href="blog.png">
+<meta charset="utf-8">
+<style>
+
+* {
+ box-sizing: border-box;
+}
+a{
+    font-size: 190%;
+}
+p {
+   font-size: 150%;
+}
+h1{
+   font-size: 250%;
+}
+h2{
+   font-size: 180%;
+}
+body {
+ margin: 0;
+}
+.header {
+ background-color: bisque;
+ text-align: center;
+ width: 100%;
+ height: 200px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .text{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.header .text h1{
+    margin-top: 40px;
+    color: aliceblue;
+}
+.header .text p{
+    color: aliceblue;
+}
+
+.menu {
+ overflow: hidden;
+ background-color: black;
+ position: sticky;
+ offset-distance: 3px;
+}
+
+.menu a {
+ float: left;
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ border-radius: 12px;
+}
+.menu a:hover {
+ background-color: pink;
+ color: black
+}
+
+@media screen and (max-width: 600px) {
+ .column.side, .column.middle {
+ width: 100%;
+}
+}
+#comment{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: pink;
+    color: black;
+    padding: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 20px 0px;
+    border-radius: 8px;
+}
+.input{
+    padding: 12px;
+    margin: 10px;
+    width: 30%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+#msg{
+    width: 20%;
+    padding: 10;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+#send{
+    padding: 10px;
+    width: 10%;
+    margin: 30px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+#send:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb( 225, 45, 45);
+}
+.btn{
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    border-radius: 8px;
+    transition: .6s ease;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px  rgb( 225, 45, 45);
+    font-weight: bold;
+}
+.footer {
+    background-color:black;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src = "comment.jpg">
+        <div class="text">
+            <h1 style="color: black; text-shadow: 2px 2px white;font-size: 80px">Comment Here</h1>
+
+        </div>
+        
+    </div>  
+    <div class="menu" id="myHeader">
+        <a  href="pw.html">Main Home</a>
+        <a  href="home.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="diary.html">Diary</a>
+        <a href="comment.html">Comment</a>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+        
+        <section id="comment">
+            <h1 style="text-align: center;" class="headings" >COMMENT YOUR MESSAGE ABOUT MY BLOG SITE</h1>  
+            <form class="form" action=" http://127.0.0.1:5501/." method="POST">
+                <label>Name: </label>
+                <input type="text" name="name" class="input">
+                <label>Your message about my blog site: </label>
+                <textarea name="msg" id="msg" cols="30" rows="9"></textarea>
+                <input type="submit" value="SEND" id="send">
+                <button class="btn">
+                ~ THANK YOU FOR VISITING MY WEBSITE ~
+                </button>
+            </form>
+        </section>
+
+        
+  
+        </div>
+        <div class="footer">
+        <p>Copyright &copy Designed by Nhathalyn. Made with &#128150;</p>
+        </div>
+    </body>
+    </html>
+
+                

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>N.A.S Blog Site</title>
+    <link rel="icon"href="blog.png">
+<meta charset="utf-8">
+<style>
+
+* {
+ box-sizing: border-box;
+}
+a{
+    font-size: 190%;
+}
+p {
+   font-size: 150%;
+}
+h1{
+   font-size: 250%;
+}
+h2{
+   font-size: 180%;
+}
+body {
+ margin: 0;
+}
+.header {
+ background-color: bisque;
+ text-align: center;
+ width: 100%;
+ height: 200px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .text{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.header .text h1{
+    margin-top: 40px;
+    color: aliceblue;
+}
+.header .text p{
+    color: aliceblue;
+}
+
+.menu {
+ overflow: hidden;
+ background-color: black;
+ position: sticky;
+ offset-distance: 3px;
+}
+
+.menu a {
+ float: left;
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ border-radius: 12px;
+}
+.menu a:hover {
+ background-color: pink;
+ color: black
+}
+.column {
+ float: left;
+ padding: 30px;
+ background-color:pink;
+}
+.column.side {
+ width: 35%;
+ text-align: justify;
+ background-color:rgb(255, 255, 255);
+}
+.column.middle {
+ width: 65%;
+ text-align: justify;
+ background-color:pink;
+ font-style: italic;
+}
+
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+
+@media screen and (max-width: 600px) {
+ .column.side, .column.middle {
+ width: 100%;
+}
+}
+hr.blog {
+  border: 10px solid powderblue;
+  border-radius: 5px;
+}
+hr.bloghr {
+  border: 10px solid pink;
+  border-radius: 5px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #17b3ab7c;
+    transition: 0.5px;
+    padding: 10px;
+    display: flex;
+}
+.container#blur.active{
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+.container .content{
+    position: relative;
+    max-width: 800px;
+}
+h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+.container .content img{
+    max-width: 100%;
+    display: flex;
+}
+.blogr{
+    position: relative;
+    padding: 5px 20px;
+    display: inline-flex;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: rgb (134,43,43);
+    transition: 1s;
+    background-color: #333;
+}
+.blogr:hover{
+    transition: 1s;
+    background: red;
+}
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.8s;
+    text-align: justify;
+}
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: 0.5s;
+}
+
+.footer {
+    background-color:black;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src = "blog.jpg">
+        <div class="text">
+            <h1 style="color: black; text-shadow: 2px 2px white;font-size: 80px">My Blog</h1>
+
+        </div>
+        
+    </div>  
+    <div class="menu" id="myHeader">
+        <a  href="pw.html">Main Home</a>
+        <a  href="home.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="diary.html">Diary</a>
+        <a href="comment.html">Comment</a>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+        <div class="container" id="blur">
+            <div class="content">
+                <h2>My Dream Destination is Japan</h2>
+                <img src="japan.jpg" width="1000px">
+                <a class="blogr" href="#" onclick="toggle()">Read More</a>
+            </div>
+        </div>
+        <div id="popup">
+            <h2>Why Japan is my dream destination?</h2>
+            <p>Japan, a dream destination for many world travelers and I want to visit Japan someday. It's a country that never fails to impress regardless of how crowded it's gotten over the past few years until now they improve more advance technology, robotics, how respectful they have and especially their pace like the Fuji Mountain in Tokyo.</p><br><br>
+            <p>I want to visit Tokyo because of Fuji mountain, the cosplay that have a big events that shows their idolize anime characters, the blossom trees, try thier foods, try their cultural clothes and other events in Tokyo.</p>
+            <a class="blogr" href="#" onclick="toggle()">Close Me</a>
+        </div>
+        <script>
+            function toggle() {
+                var blur=document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+        </script>
+        <hr class="bloghr">
+        
+        
+
+        <hr class="blog">
+        <div class="row">
+            <div class="column middle">
+            <h2 style= "text-align: center; text-shadow: 2px 2px white;">Be Player</h2>
+            <p>I don't know the ending of my story. I'm being me to myself and people around me being nervous when talking in front of many people, shaking hands when reporting, feeling shy about my appearance, having insecurities in my body or life, and so many problems that I always cry every night when I remember those problems that asking myself that  "I am able to solve these problems? I am going to be a successful someday?" those some questions that bothered me every I'm down in my life. </p>
+            <br>
+            <p> I'm confused about what I call a fairy tale. I'm being real to myself that I reveal who I am. I didn't expect to like a man because of his intelligence, his dark side, his good side, how he cared for me, and who he was in such a short time. He was the kind of guy for whom I was so relieved and couldn't bear to fall for him, the kind of guy for whom I could tell so many secrets that I shouldn't have told as if we had our world every time we talked.</p>
+            <br>
+            <p> Despite all those questions in my mind, all I can say is "I'm strong and better than yesterday" Because of all of what I've done I always do my best and make an effort for me to not regrets it someday in my life. And also to people who are still in me or supporting me always and Im very thankful for them. To God who always I cried when I  have a problem to tell him and sometimes forgot him when I'm happy is always there for me always guiding me in my everyday life and to my loved ones.</p>
+        <br>
+        <p>In my life, I've met a lot of people whose there for you when you needed them and to those when you needed but they disappear when you needed them. I realized that people we met are just a lesson for us or give lessons for us and make us realize to more focus on ourselves to be the best version of ourselves. Thanks God, to my family who are always there for me. And to those my classmates, real friends whether we're not talking or chatting but include me as a friend, to my professor, to my pets that relieves my stress, to those who come to my life that they court me and give lessons and realization in my life.</p>
+        </div>
+    
+            <div class="column side">
+            <h2 style= "text-align: center; text-shadow: 2px 2px pink;">My Blog</h2>
+            <br>
+            <h2 style= "text-align: center; text-shadow: 2px 2px pink; font-weight: bold;">Title: Be Player</h2>
+            <p style= "text-align: center; text-shadow: 2px 2px pink; font-weight: bold;">Date made: August 06, 2023</p>
+            <p style= "text-align: center;">I wrote this for me to remember to myself that be a player or this world rather than world play you. It's all about fighting about your agony in life, on howyou deal with it to makes you a better person in your life.</p>
+             
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            </div>
+    
+        </div>
+        <hr class="blog">
+        <div class="row">
+        
+        <div class="column middle">
+        <h2 style= "text-align: center; text-shadow: 2px 2px white;">Another Side Of My Real World</h2>
+        <p> Wrong time, right person, or wrong person, right time? Do you believe in that saying? It is the kind of thing you don't want to do or happen, but he comes into your life at the wrong time. You think he's the one for you, but your destiny is not in his favor.</p>
+        <br><p> I'm confused about what I call a fairy tale. I'm being real to myself that I reveal who I am. I didn't expect to like a man because of his intelligence, his dark side, his good side, how he cared for me, and who he was in such a short time. He was the kind of guy for whom I was so relieved and couldn't bear to fall for him, the kind of guy for whom I could tell so many secrets that I shouldn't have told as if we had our world every time we talked.</p>
+        <br><p> Some people want to court me or others who can be for me, but I see him naturally, and I don't know why. I only doubt if this is just a lesson for me or if we are not meant for each other. I'm afraid to lose someone I loved in my ups and down</p>
+        <br><p> In the past few days, we have wanted to stay and become lovers. It's not easy to get into a relationship because it's not just about love or trials that you have to deal with. We have had a lot of fights and been through a lot. After a lot of hardships, we decided to stay with each other.</p>
+        </div>
+        
+        <div class="column side">
+        <h2 style= "text-align: center; text-shadow: 2px 2px pink;">My Blog</h2>
+        <br>
+        <h2 style= "text-align: center; text-shadow: 2px 2px pink; font-weight: bold;">Title: Another Side of my real world</h2>
+        <p style= "text-align: center; text-shadow: 2px 2px pink; font-weight: bold;">Date made: August 06, 2023</p>
+        <p style= "text-align: center;">I wrote this for me to remember that person. It's all about love that I've met and experience in the wrong time but right person for me that I like to be with him. I just want to spend more time with him, share and tell a story. Also fight struggles in life with him and I hope his the one for me.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+        
+    </div>
+        <div class="footer">
+        <p>Copyright &copy Designed by Nhathalyn. Made with &#128150;</p>
+        </div>
+    </body>
+    </html>
+
+    

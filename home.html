@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>N.A.S Blog Site</title>
+<link rel="icon"href="blog.png">
+<meta charset="utf-8">
+<style>
+
+* {
+ box-sizing: border-box;
+}
+a{
+    font-size: 190%;
+}
+p {
+   font-size: 150%;
+}
+h1{
+   font-size: 250%;
+}
+h2{
+   font-size: 180%;
+}
+body {
+ margin: 0;
+}
+.header {
+ background-color: bisque;
+ text-align: center;
+ width: 100%;
+ height: 200px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .text{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.header .text h1{
+    margin-top: 40px;
+    color: aliceblue;
+}
+.header .text p{
+    color: aliceblue;
+}
+
+.menu {
+ overflow: hidden;
+ background-color: black;
+ position: sticky;
+ offset-distance: 3px;
+}
+
+.menu a {
+ float: left;
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ border-radius: 12px;
+}
+.menu a:hover {
+ background-color: pink;
+ color: black
+}
+.column {
+ float: left;
+ padding: 30px;
+ background-color:pink;
+}
+
+.column.middle {
+ width: 100%;
+ text-align: justify;
+ background-color:pink;
+ font-style: italic;
+}
+
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+}
+
+.desc {
+  padding: 10px;
+  text-align: center;
+}
+div.gallery {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+div.gallery:hover {
+  border: 5px solid #777;
+}
+
+div.gallery img {
+  width: 90%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+ .column.side, .column.middle {
+ width: 100%;
+}
+}
+.footer {
+    background-color:black;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <img src = "home.jpg">
+        <div class="text">
+            <h1 style="color: black; text-shadow: 2px 2px white;font-size: 80px">Home</h1>
+
+        </div>
+        
+    </div>  
+    <div class="menu" id="myHeader">
+        <a  href="pw.html">Main Home</a>
+        <a  href="home.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="diary.html">Diary</a>
+        <a href="comment.html">Comment</a>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+    
+        <div class="row">
+        <div class="column middle">
+            <h2 style= "text-align: justify; text-shadow: 2px 2px white;">Hey, I'm Nhathalyn Sacamil </h2>
+            <p>Thank you for visiting my blog I wrote my blog and diary about my story and you can know me better.</p>
+         <h2 style= "text-align: justify; text-shadow: 2px 2px white;">Memories To Remember</h2>
+        <br>
+            <br>
+            <br>
+            <div class="dropdown">
+            <img src="a.jpg" alt="Cinque Terre" width="150" height="100">
+                <div class="dropdown-content">
+                <img src="a.jpg" alt="Cinque Terre" width="300" height="200">
+                <div class="desc">Church</div>
+            </div>
+        </div> 
+        <div class="dropdown">
+            <img src="fam.png" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="fam.png" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Mass ~ Jan 01, 2023</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="b.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="b.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Oline Class</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="d.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="d.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Role Play in El Filibusterismo</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="e.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="e.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Incomplete Class picture</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="f.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="f.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Quantitative Research Class</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="g.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="g.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Laboratory Class in Integrative Programming</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="h.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="h.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Platform Class</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="i.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="i.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Project Poster in Rizal Class</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="m.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="m.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Library Picture with My friends</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="o.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="o.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">April 17, 2023. My Birthday and my friends gave me mini-cakes.</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="p.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="p.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Hallway Picture</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="q.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="q.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Worm Book Girl Picture in Library</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="r.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="r.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Picture with some of my boys classmates.</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="s.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="s.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Late Night Class In Foreugn Language</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="c.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="c.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Rizal Perfect Role Play</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="1.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="1.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Church Candle</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="3.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="3.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Accounting Class</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A3.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A3.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Reporting</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A4.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A4.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Project Uni-ZATCHI Brigde</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A5.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A5.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Selfie with Hera</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A6 .jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A6 .jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">P.E Arnis Performance</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A8.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A8.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Hera</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A9.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A9.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Birthday</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="A10.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="A10.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Happy</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="UNI.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="UNI.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">UNI-ZACHI BRIDGE SYSTEM w/ Ma'am Krissenda</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="fl.jpg" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="fl.jpg" alt="Cinque Terre" width="300" height="200">
+            <div class="desc">Foriegn Language Mandarin w/ Sir Harry</div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img src="pink.png" alt="Cinque Terre" width="150" height="100">
+            <div class="dropdown-content">
+            <img src="pink.png" alt="Cinque Terre" width="300" height="200">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+    </div>
+
+       
+        </div>
+        <div class="footer">
+        <p>Copyright &copy Designed by Nhathalyn. Made with &#128150;</p>
+        </div>
+    </body>
+    </html>
+
+                

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>
+/* Your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="button"],
+input[type="reset"] {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="button"],
+input[type="reset"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+input[type="text"][name="total"] {
+    font-weight: bold;
+    background-color: #f4f4f4;
+    border: none;
+    width: 100px;
+}
+
+    </style>
+</head>
+<script language="javascript" type="text/javascript">
+    function multiply() {
+        a = Number(document.calculator.number1.value);
+        b = Number(document.calculator.number2.value);
+        c = a * b;
+        document.calculator.total.value = c;
+    }
+
+    function addition() {
+        a = Number(document.calculator.number1.value);
+        b = Number(document.calculator.number2.value);
+        c = a + b;
+        document.calculator.total.value = c;
+    }
+
+    function subtraction() {
+        a = Number(document.calculator.number1.value);
+        b = Number(document.calculator.number2.value);
+        c = a - b;
+        document.calculator.total.value = c;
+    }
+
+    function division() {
+        a = Number(document.calculator.number1.value);
+        b = Number(document.calculator.number2.value);
+        c = a / b;
+        document.calculator.total.value = c;
+    }
+</script>
+<body>
+    <form name="calculator">
+        <h1>Simple Calculator</h1>
+        <input type="text" name="number1" placeholder="NUMBER e.g. 2003">
+        <input type="text" name="number2" placeholder="NUMBER e.g. 2023">
+        <br>
+        <br>
+        <input type="button" value="+ADD" onclick="javascript:addition();">
+        <input type="button" value="-SUB" onclick="javascript:subtraction();">
+        <input type="button" value="/ DIVIDE" onclick="javascript:division();">
+        <input type="button" value="*MULTIPLY" onclick="javascript:multiply();">
+        <br>
+        <br>
+        <input type="text" name="total" placeholder="RESULT HERE">
+        <input type="reset" value="CLEAR">
+    </form>
+</body>
+</html>
